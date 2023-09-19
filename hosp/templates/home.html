@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+{% block style %}
+#image{
+background-image: url('https://thumbs.dreamstime.com/b/doctor-stethoscope-hand-hospital-background-gown-94227568.jpg?w=1400');
+background-size: cover;
+background-repeat: no-repeat;
+height:500px;
+width:100%;
+}
+{% endblock %}
+{% block body %}
+<div id="image">
+    <h1></h1>
+</div>
+<div>
+    <h1 style="text-align:center">WELCOME TO HOSPITAL</h1>
+    <p>Welcome to our new website. We encourage you to find out more about the values and vision that guides us,
+        the services and programs we offer, the indicators that ensure our continued accountability and
+        transparency, and the news and events that matter most to you. It is the place where you will find
+        information on career opportunities with HMH and be able to access general healthcare information to
+        keep you well informed.</p>
+</div>
+<div class="card-deck">
+  <div class="card">
+    <img src="https://cdn.xxl.thumbs.canstockphoto.com/logo-admin-icon-administrator-illustration-of-a-man-in-a-jacket-and-shirt-ties-jacket-and-shirt-drawing_csp23830992.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">ADMIN</h5>
+        <a href="#" class="btn btn-primary">View</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJKzBZGA-7v1gxM5nubq_o2flC6tvz9Tn4rg&usqp=CAU" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">DOCTOR</h5>
+      <a href="#" class="btn btn-primary">View</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://img.freepik.com/premium-vector/sick-boy-face-with-thermometer-his-mouth-ill-little-kid-with-fever-clipart-illness-emotion_107547-1256.jpg?w=2000" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">PATIENT</h5>
+       <a href="#" class="btn btn-primary">View</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

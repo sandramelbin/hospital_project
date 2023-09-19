@@ -1,0 +1,307 @@
+{% extends 'base2.html' %}
+{% block title %}{% endblock %}
+{% load static %}
+{% block style %}
+a:link {
+      text-decoration: none;
+    }
+
+
+    .row1{
+      margin: 100px;
+    }
+img{
+border-radius: 50%;
+width:100px;
+margin-left:70px;
+margin-top:20px;
+}
+.maindiv{border:2px solid black;
+margin-left:1px;
+width:300px;
+height:670px;
+background-color:rgb(34, 139, 34);
+}
+.div1,div2,div3,div4{border:2px green;
+margin-left:0.5px;
+width:300px;
+height:670px;
+background-color: green
+}
+.icon{padding-left:5px;
+}
+#div5{
+border-radius:50%;
+background-color:white;
+padding:10px;
+color:green;
+}
+{% endblock %}
+{% block body%}
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="maindiv">
+            <div class="div1">
+                <img src="{% static 'images/admin.jpg' %}" alt="My image"><br><br>
+                <h6 style="margin-left:100px;color:white;">Admin</h6><br>
+                {% for i in data %}
+                <h3 style="margin-left:80px;color:white;">{{i.first_name}}</h3>
+                {% endfor %}
+            <div class="icon">
+                <a href="admin_dash1">
+                    <h6 style="color:black;"><i class="fa fa-dashboard" style="font-size:24px;color:white;"></i>Dashboard</h6>
+                </a><br>
+                <div class="icon">
+                    <a href=doctor1>
+                        <h6 style="color:white;"><i class="fa fa-medkit" style="font-size:24px;color:white;"></i>doctor</h6>
+                    </a><br>
+                     <div class="icon">
+                    <a href="patient1">
+                        <h6 style="color:white;"><i class="fa fa-wheelchair" style="font-size:24px"></i>Patients</h6>
+                    </a><br>
+                         <div class="icon">
+                    <a href="appointment1">
+                        <h6 style="color:white;"><i class="fa fa-calendar" style="font-size:24px"></i>Appointments</h6>
+                    </a><br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    {% if admin_dash1 %}
+    <br><br><br>
+
+        <div class="col-sm-8">
+            <br><br>
+
+             <div>
+                 <div class="row">
+                    <div class="col">
+                    <div style="background-color:red; " class="card">
+                        <div class="card-body">
+                            1
+                            <p><i class="fa fa-user-md" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Total Doctor</h5>
+                            <p class="card-text">Approval required:1</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div style="background-color:orange; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-wheelchair" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Total Patient</h5>
+                            <p class="card-text">Wants to admit:1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="background-color:green; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-calendar" style="font-size:36px;float:right"></i></p>
+                            <h5 class="card-title">Total Appointment</h5>
+                            <p class="card-text">Approve Apppointments:0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+</div>
+
+
+            {% endif %}
+
+    {% if doctor1 %}
+    <br><br><br>
+
+        <div class="col-sm-8">
+            <br><br>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <a href=#></a>
+                        <div style="background-color:blue; " class="card">
+                            <div class="card-body">
+                            <p><i class="fa fa-user-md" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Doctor Record</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="background-color:cyan; " class="card">
+                            <div class="card-body">
+                            <p><i  class="fa fa-user-md" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Register Doctor</h5>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <a href="approvedoctor">
+                            <div style="background-color:yellow; " class="card">
+                                <div class="card-body">
+                                    <p><i class="fa fa-check" style="font-size:36px;float:right;"></i></p>
+                                    <h5 class="card-title">Approve Doctor</h5>
+                                </div>
+                            </div>
+                        </a>
+                            </div>
+
+                    <div class="col">
+                        <div style="background-color:violet; " class="card">
+                            <div class="card-body">
+                            <p><i id="div1" class="fa fa-user-md" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Doctor Specialization</h5>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+
+            </div>
+        </div>
+    {% endif %}
+            {% if patient1 %}
+    <br><br><br>
+
+        <div class="col-sm-8">
+            <br><br>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <div style="background-color:blue; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-user-md" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Patient Record</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="background-color:cyan; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-wheelchair" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Admit Patient</h5>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="background-color:yellow; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-calendar" style="font-size:36px;float:right"></i></p>
+                            <h5 class="card-title">Approve Patient</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="background-color:violet; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-calendar" style="font-size:36px;float:right"></i></p>
+                            <h5 class="card-title">Discharge Patient</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        </div>
+            {% endif %}
+            {% if appointment1 %}
+    <br><br><br>
+
+        <div class="col-sm-8">
+            <br><br>
+        <div>
+                <div class="row">
+                    <div class="col">
+                        <div style="background-color:blue; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-user-md" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">View Appointment</h5>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col">
+                    <div style="background-color:cyan; " class="card">
+                        <div class="card-body">
+                            1
+                            <p><i class="fa fa-wheelchair" style="font-size:36px;float:right;"></i></p>
+                            <h5 class="card-title">Book Appointment</h5>
+
+                        </div>
+                    </div>
+                </div>
+                    <div class="col">
+                        <div style="background-color:yellow; " class="card">
+                            <div class="card-body">
+                            1
+                            <p><i class="fa fa-calendar" style="font-size:36px;float:right"></i></p>
+                            <h5 class="card-title">Approve Appointment</h5>
+                            </div>
+                        </div>
+                    </div>
+
+             </div>
+        </div>
+        </div>
+
+
+
+
+            {% endif %}
+
+            {% if approvedoctor %}
+
+            <div class="row>">
+                <br><br><br>
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Doctors &nbsp Applied For Registration</h6>
+                    </div>
+                        <table class="table table-hover" id="dev-table">
+                            <thead>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Profile Picture</th>
+                                  <th>Mobile</th>
+                                  <th>Address</th>
+                                  <th>Department</th>
+                                  <th>Approve</th>
+                                  <th>Reject</th>
+                                </tr>
+                            </thead>
+
+
+      {% for d in data2 %}
+      <tr>
+        <td> {{d.first_name}} {{i.last_name}}</td>
+        <td>{i.file}</td>
+        <td>{{d.mobile}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.department}}</td>
+        <td><a class="btn btn-primary btn-xs" href=#><span class="glyphicon glyphicon-ok"></span></a></td>
+        <td><a class="btn btn-danger btn-xs" href=#><span class="glyphicon glyphicon-trash"></span></a></td>
+      </tr>
+      {% endfor %}
+
+    </table>
+                </div>
+            </div>
+            {% endif %}
+            </div>
+
+
+            {% endblock %}
